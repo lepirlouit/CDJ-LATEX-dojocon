@@ -1,0 +1,179 @@
+% DojoCon Presentation: Documenting Scratch with LaTeX
+% Author: Benoit de Biolley
+% Compile with: pdflatex
+
+\documentclass{beamer}
+
+% Theme
+\usetheme{Madrid}
+
+% Packages
+\usepackage{scratch3}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+% Title Information
+\title[Scratch + LaTeX]{Documenting Scratch Projects with LaTeX}
+\subtitle{How to use the scratch3 package}
+\author{Benoit de Biolley}
+\date{DojoCon}
+
+\begin{document}
+
+% ---------------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+% ---------------------------------------------------------
+
+\begin{frame}{Agenda}
+  \tableofcontents
+\end{frame}
+
+% ---------------------------------------------------------
+\section{Introduction}
+
+\begin{frame}{Why Documentation?}
+  \begin{itemize}
+    \item Improves learning
+    \item Helps others understand your project
+    \item Encourages good coding habits
+    \item Makes sharing easier
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------
+\section{What is LaTeX?}
+
+\begin{frame}{What is LaTeX?}
+  \begin{itemize}
+    \item Typesetting system for high-quality documents
+    \item Widely used in education and research
+    \item Ideal for reproducible project documentation
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Minimal Example}
+  \begin{verbatim}
+\documentclass{article}
+\begin{document}
+Hello DojoCon!
+\end{document}
+  \end{verbatim}
+\end{frame}
+
+% ---------------------------------------------------------
+\section{The scratch Package}
+
+\begin{frame}{scratch Package}
+  \begin{itemize}
+    \item Reproduces visual Scratch blocks in LaTeX
+    \item Perfect for tutorials and class materials
+    \item Simple syntax to represent scripts
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Simple Block}
+  \begin{verbatim}
+\begin{scratch}
+  \blockmove{move \ovalnum{10}}
+  \blockmove{turn \turnright{} \ovalnum{90} degrees}
+\end{scratch}
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}{Rendered Example}
+\begin{scratch}
+  \blockmove{move \ovalnum{10}}
+  \blockmove{turn \turnright{} \ovalnum{90} degrees}
+\end{scratch}
+\end{frame}
+
+% ---------------------------------------------------------
+\section{Documenting a Script}
+
+\begin{frame}[fragile]{Example Script}
+\vbox{
+  \begin{verbatim}
+\begin{scratch}
+  \blockinit{when \greenflag clicked}
+  \blockinfloop{forever}
+  {
+    \blockmove{go to \ovalmove*{mouse-pointer}}
+    \blockmove{move \ovalnum{10} steps}
+  }
+\end{scratch}
+  \end{verbatim}
+}
+\end{frame}
+
+
+
+\begin{frame}{Rendered Script}
+\begin{scratch}
+  \blockinit{when \greenflag clicked}
+  \blockinfloop{forever}
+  {
+    \blockmove{go to \ovalmove*{mouse-pointer}}
+    \blockmove{move \ovalnum{10} steps}
+  }
+\end{scratch}
+\end{frame}
+
+\begin{frame}{\textbackslash selectmenu vs \textbackslash oval(suffix)}
+  \setscratch{scale=.7}
+  \begin{scratch}
+    \blockinit{when \greenflag clicked \selectmenu{selectmenu}}
+    \blockmove{bloc de mouvement \selectmenu{selectmenu} \ovalmove{ovalmove} \ovalmove*{ovalmove*}}
+    \blocklook{bloc d’apparence \selectmenu{selectmenu} \ovallook{ovallook} \ovallook*{ovallook*}}
+    \blocksound{bloc de son \selectmenu{selectmenu} \ovalsound{ovalsound} \ovalsound*{ovalsound*}}
+    \blockpen{bloc de stylo \selectmenu{selectmenu} \ovalpen{ovalpen} \ovalpen*{ovalpen*}}
+    \blockvariable{bloc de variable \selectmenu{selectmenu} \ovalvariable{ovalvariable}}
+    \blocklist{bloc de liste \selectmenu{selectmenu} \ovallist{ovallist}}
+    \blockevent{bloc d’événement \selectmenu{selectmenu} }
+    \blockcontrol{bloc de contrôle \selectmenu{selectmenu} \ovalcontrol{ovalcontrol} \ovalcontrol*{ovalcontrol*}}
+    \blocksensing{bloc de capteur \selectmenu{selectmenu} \ovalsensing{ovalsensing} \ovalsensing*{ovalsensing*}}
+    \blockstop{stop \selectmenu{selectmenu}}
+  \end{scratch}
+  \end{frame}
+
+
+% ---------------------------------------------------------
+\section{Why LaTeX?}
+
+\begin{frame}{Why Use LaTeX for Scratch?}
+  \begin{itemize}
+    \item Consistent formatting
+    \item Professional output
+    \item Easy version control (Git)
+    \item Reusable templates
+  \end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------
+\section{Workflow}
+
+\begin{frame}{Typical Workflow}
+  \begin{enumerate}
+    \item Write .tex file
+    \item Compile to PDF
+    \item Share or publish
+  \end{enumerate}
+\end{frame}
+
+% ---------------------------------------------------------
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item scratch + LaTeX = great for education
+    \item Helps document, teach, and share
+    \item Encourages clean project structure
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Questions?}
+  Thank you!
+\end{frame}
+
+\end{document}
