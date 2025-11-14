@@ -1,5 +1,5 @@
 % DojoCon Presentation: Documenting Scratch with LaTeX
-% Author: Benoit de Biolley
+% Author: Benoît de Biolley
 % Compile with: pdflatex
 
 \documentclass{beamer}
@@ -15,7 +15,7 @@
 % Title Information
 \title[Scratch + LaTeX]{Documenting Scratch Projects with LaTeX}
 \subtitle{How to use the scratch3 package}
-\author{Benoit de Biolley}
+\author{Benoît de Biolley}
 \date{DojoCon}
 
 \begin{document}
@@ -33,19 +33,40 @@
 % ---------------------------------------------------------
 \section{Introduction}
 
-\begin{frame}{Why Documentation?}
+\begin{frame}{Who am I ?}
   \begin{itemize}
-    \item Improves learning
-    \item Helps others understand your project
-    \item Encourages good coding habits
-    \item Makes sharing easier
+    \item Coderdojo Sint-Pieters-Leeuw
+    \item Coderdojo Forest
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{map.png}
+        \caption{Coderdojo's in Brussels}
+    \end{figure}
   \end{itemize}
+\end{frame}
+\begin{frame}{My dojo}
+\begin{figure}
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{cdjForest.jpg}
+    \caption{Oktober}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{cdjForest2.jpg}
+    \caption{November}
+\end{minipage}%
+\end{figure}
 \end{frame}
 
 % ---------------------------------------------------------
-\section{What is LaTeX?}
+\section{What is \LaTeX ?}
 
-\begin{frame}{What is LaTeX?}
+\begin{frame}{What is \LaTeX?}
+\centering
+
+\LaTeX
+\vspace{5mm}
   \begin{itemize}
     \item Typesetting system for high-quality documents
     \item Widely used in education and research
@@ -54,12 +75,17 @@
 \end{frame}
 
 \begin{frame}[fragile]{Minimal Example}
+\begin{minipage}{.49\textwidth}
   \begin{verbatim}
 \documentclass{article}
 \begin{document}
 Hello DojoCon!
 \end{document}
   \end{verbatim}
+  \end{minipage}
+\begin{minipage}{.49\textwidth}
+Hello DojoCon!
+\end{minipage}
 \end{frame}
 
 % ---------------------------------------------------------
@@ -67,7 +93,7 @@ Hello DojoCon!
 
 \begin{frame}{scratch Package}
   \begin{itemize}
-    \item Reproduces visual Scratch blocks in LaTeX
+    \item Reproduces visual Scratch blocks in \LaTeX
     \item Perfect for tutorials and class materials
     \item Simple syntax to represent scripts
   \end{itemize}
@@ -76,15 +102,12 @@ Hello DojoCon!
 \begin{frame}[fragile]{Simple Block}
   \begin{verbatim}
 \begin{scratch}
-  \blockmove{move \ovalnum{10}}
+  \blockmove{move \ovalnum{10} steps}
   \blockmove{turn \turnright{} \ovalnum{90} degrees}
 \end{scratch}
   \end{verbatim}
-\end{frame}
-
-\begin{frame}{Rendered Example}
 \begin{scratch}
-  \blockmove{move \ovalnum{10}}
+  \blockmove{move \ovalnum{10} steps}
   \blockmove{turn \turnright{} \ovalnum{90} degrees}
 \end{scratch}
 \end{frame}
@@ -121,6 +144,8 @@ Hello DojoCon!
 \end{frame}
 
 \begin{frame}{\textbackslash selectmenu vs \textbackslash oval(suffix)}
+  \begin{minipage}{.65\textwidth}
+      
   \setscratch{scale=.7}
   \begin{scratch}
     \blockinit{when \greenflag clicked \selectmenu{selectmenu}}
@@ -135,6 +160,20 @@ Hello DojoCon!
     \blocksensing{bloc de capteur \selectmenu{selectmenu} \ovalsensing{ovalsensing} \ovalsensing*{ovalsensing*}}
     \blockstop{stop \selectmenu{selectmenu}}
   \end{scratch}
+  \end{minipage}
+  \begin{minipage}{}
+      \mbox{}\vspace*{0.2 cm}\textbackslash blockinit
+      \vspace*{0.25 cm} \textbackslash blockmove
+      \vspace*{0.25 cm} \textbackslash blocklook
+      \vspace*{0.25 cm} \textbackslash blocksound
+      \vspace*{0.25 cm} \textbackslash blockpen
+      \vspace*{0.25 cm} \textbackslash blockvariable
+      \vspace*{0.25 cm} \textbackslash blocklist
+      \vspace*{0.25 cm} \textbackslash blockevent
+      \vspace*{0.25 cm} \textbackslash blockcontrol
+      \vspace*{0.25 cm} \textbackslash blocksensing
+      \vspace*{0.25 cm} \textbackslash blockstop
+  \end{minipage}
   \end{frame}
 
 
@@ -173,7 +212,12 @@ Hello DojoCon!
 \end{frame}
 
 \begin{frame}{Questions?}
-  Thank you!
+  Let's go !
+  \newline
+  \href{https://www.overleaf.com/}{https://www.overleaf.com/}
+  \newline
+  \href{https://ctan.org/pkg/scratch3}{https://ctan.org/pkg/scratch3}
+  
 \end{frame}
 
 \end{document}
